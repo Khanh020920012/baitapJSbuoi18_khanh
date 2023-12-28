@@ -89,3 +89,50 @@ function soNguyenTo() {
   }
   document.getElementById("noti8").innerHTML = "Số nguyên tố là " + indexNumber;
 }
+
+function tangDan() {
+  for (var i = 0; i < convertArray.length; i++) {
+    for (var j = i + 1; j < convertArray.length; j++) {
+      if (convertArray[i] > convertArray[j]) {
+        var hoanVi = convertArray[i];
+        convertArray[i] = convertArray[j];
+        hoanVi = convertArray[j];
+      }
+    }
+  }
+  document.getElementById("noti9").innerHTML = "Hàm tăng dần : " + convertArray;
+}
+function themMang() {
+  var txtVitri3 = document.getElementById("txtVitri3").value * 1;
+  soNguyen.push(txtVitri3);
+  document.getElementById("noti10").innerHTML = soNguyen;
+}
+
+function timSoNguyen() {
+  var soNguyenSauXuLy = [];
+  for (var i = 0; i < soNguyen.length; i++) {
+    if (Number.isInteger(soNguyen[i])) {
+      soNguyenSauXuLy.push(soNguyen[i]);
+    }
+  }
+  document.getElementById("noti11").innerHTML = soNguyenSauXuLy;
+}
+
+function soAmDuong(){
+  var dem1 = 0;
+  var dem2 = 0;
+  for(var i = 0; i< convertArray.length;i++){
+    var score = convertArray[i];
+    if(score > 0 ){
+      dem1++;
+    }if(score < 0 ){
+      dem2++;
+    }
+  }
+  if(dem1 > dem2 ){
+    result = "số dương nhiều hơn số âm";
+  }else if (dem1 < dem2) {
+    result = "số âm nhiều hơn số dương";
+  }
+  document.getElementById("noti12").innerHTML = result;
+}
